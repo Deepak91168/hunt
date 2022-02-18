@@ -1,20 +1,24 @@
  {% extends "base.html" %} {% block title %} Abhedya - quiz {% endblock %} {% block content %}
 <style>
     div.wait {
-        width: 100%;
         position: absolute;
         top: 50%;
+        padding: 20px;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        font-size: 25px;
+        font-size: 30px;
+        backdrop-filter: blur(8px);
+        border-radius:14px;
     }
+
+span.time{
+  font-weight:bold;
+}
 </style>
 <div class="rules wait">
-    <span>The hunt is scheduled from {{ publish_time|date:"D j M Y "}}, {{ publish_time|time:"g:i:s a "}} to
-        {{ deactivate_time|date:"D j M Y "}}, {{ deactivate_time|time:"g:i:s a "}}
-    </span><br><br>
-    <label for="">Add a Google Calender Reminder:</label>
-    <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MGFjbWdtcm9jazRjbHB2M25kdXZkN2J1bDcgMjBibWEwMjZAbml0aC5hYy5pbg&amp;tmsrc=20bma026%40nith.ac.in"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif" width="140px"></a>
+  <span>The hunt is scheduled from <span class="time">{{ publish_time|date:"D j M Y "}}, {{ publish_time|time:"g:i:s a "}} </span>to<span class="time">
+      {{ deactivate_time|date:"D j M Y "}}, {{ deactivate_time|time:"g:i:s a "}}</span>
+    </span>
 </div>
 {%endblock%}
