@@ -16,4 +16,3 @@ sqlparse
 toml
 wrapt
 django-utils-six
-whitenoise
