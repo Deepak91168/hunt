@@ -177,8 +177,10 @@ EMAIL_USE_TLS = True
 
 # Jazmin settings
 JAZZMIN_SETTINGS = {
-    "site_title": "Abhedya Admin",
-    "site_header": "Abhedya",
- "copyright": "ISTE NITH",
+"site_title": "Abhedya",
+"site_header": "Abhedya",
+"copyright": "ISTE NITH",
+"site_brand": "Abhedya Admin",
+"welcome_sign": "Hello, Admin!!", 
 }
 
