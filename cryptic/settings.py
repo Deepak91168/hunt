@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w+3&$np343yh@7de01l+k@sxj)n%r@%(l_=w%kn=g39+)#u#^4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False 
 
 ALLOWED_HOSTS = ['*']
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,11 +142,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+if DEBUG:
+
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+else:
+
+  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+#STATICFILES_DIRS = [
+#   os.path.join(BASE_DIR, "static"),
+#]
 
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
@@ -163,4 +173,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'abhedya.iste@gmail.com'
 EMAIL_HOST_PASSWORD = 'uxgvboevptesclqu'
 EMAIL_USE_TLS = True
+
+
+# Jazmin settings
+JAZZMIN_SETTINGS = {
+    "site_title": "Abhedya Admin",
+    "site_header": "Abhedya",
+ "copyright": "ISTE NITH",
+}
 
