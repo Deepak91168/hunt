@@ -7,7 +7,7 @@ tz = pytz.timezone('Asia/Kolkata')
 
 
 # These should be in IST
-PUBLISH_DATE = datetime(year=2022, month=2, day=24, hour=18, minute=00, second=00)
+PUBLISH_DATE = datetime(year=2022, month=2, day=24, hour=20, minute=00, second=00)
 DEACTIVATE_DATE = datetime(year=2022, month=3, day=25, hour=21, minute=00, second=00)
 
 
