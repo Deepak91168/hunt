@@ -11,20 +11,50 @@
             backdrop-filter: blur(8px);
             border-radius: 5%;
     }
+
 </style>
 
 
-<section id="registration-form">
+<section>
     <div class="background-blur">
         <h2>Register</h2>
         <hr>
-        <form method="POST" action="" class="register"> {% csrf_token %} {{form|crispy}}
-            <input type="submit" value="submit" name="" class="btn btn-primary btn-lg next_question_btn">
+        <form method="POST" action="" class="register"> {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+                    {{form.first_name|as_crispy_field}}
+               </div>
+            <div class="form-group col-md-6 mb-0">
+                    {{form.last_name|as_crispy_field}}
+               </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                  {{form.email|as_crispy_field}}
+                 </div>
+                <div class="form-group col-md-6 mb-0">
+                  {{form.username|as_crispy_field}}
+                </div> 
+              </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                  {{form.phoneNumber|as_crispy_field}}
+                 </div>
+                <div class="form-group col-md-6 mb-0">
+                  {{form.institute|as_crispy_field}}
+                </div>
+            </div>
+            <div class="mr-5 ml-5"}>
+                  {{form.password1|as_crispy_field}}
+                  {{form.password2|as_crispy_field}}
+            </div>
+                
+            <input type="submit" value="submit" name="" class="btn btn-primary btn-lg ">
         </form>
     </div>
-
-</section>
 <hr>
+</section>
+
 {%endblock%}
 
 
