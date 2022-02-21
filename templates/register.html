@@ -11,7 +11,10 @@
             backdrop-filter: blur(8px);
             border-radius: 5%;
     }
-
+    #div_id_password1, #div_id_password2{
+      padding-left:15px;
+      padding-right:15px
+    }
 </style>
 
 
@@ -49,7 +52,7 @@
                   {{form.password2|as_crispy_field}}
             </div>
                 
-            <input type="submit" value="submit" name="" class="btn btn-primary btn-lg " style="background-color: var(--green);border:0;">
+            <input type="submit" value="submit" name="" class="btn btn-primary btn-lg " style="background-color: var(--green); margin-left:15px; border:0;">
         </form>
     </div>
 <hr>
