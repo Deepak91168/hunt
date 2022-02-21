@@ -16,10 +16,10 @@ Including another URLconf
 
 
 
-from django.conf.urls import url
+# from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
-from django.urls import path
+from django.urls import path, re_path
 from django.urls.conf import include 
 from django.contrib import admin
 from accounts.views import leaderboard, home, rules, register, activate
@@ -30,8 +30,8 @@ from django.conf.urls.static import static
 
 app_name = "accounts"
 urlpatterns = [
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     path('admin/', admin.site.urls),
     path('register/',register, name="register"),
     path('leaderboard/',leaderboard, name="leaderboard"),
