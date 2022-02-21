@@ -11,12 +11,13 @@ from django.utils import timezone
 from .decorators.hunt_is_active import hunt_is_active
 from django.utils.decorators import method_decorator
 import logging
+import hashlib
 
 
 from django.urls import reverse
 
 logger = logging.getLogger("questions.view")
-FINAL_LEVEL = 10
+FINAL_LEVEL = 11
 
 class Hunt(LoginRequiredMixin, View):
 	""" The Game """
@@ -61,6 +62,7 @@ class Hunt(LoginRequiredMixin, View):
 		form = self.form_class(request.POST)
 		if form.is_valid():
 			ans = form.cleaned_data.get('answer')
+			ans = hashlib.sha256(ans.encode()).hexdigest()
 			valid_answer = cur_level.answer.lower().split(",")
 			if ans in valid_answer:
 				logger.info("Levelcleared")
