@@ -51,7 +51,7 @@ def register(request):
 			msg = EmailMultiAlternatives(mail_subject, html_content, from_email, [to])
 			msg.attach_alternative(html_content, "text/html")
 			msg.send()
-			messages.success(request, f'we have sent a confirmation email.')
+			messages.success(request, f'we have sent a confirmation email (check your spam as well).')
 			return redirect('home')
 		else:
 			context={'form':form,}
