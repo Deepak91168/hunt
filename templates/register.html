@@ -15,6 +15,14 @@
       padding-left:15px;
       padding-right:15px
     }
+    #error_1_id_email, #error_1_id_username, #error_1_id_password1, #error_1_id_password2, #error_1_id_phoneNumber{
+      color:#c40202;
+    }
+
+    .has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label{
+      color:#c40202;
+    } 
+    
 </style>
 
 
@@ -22,7 +30,9 @@
     <div class="background-blur">
         <h2>Register</h2>
         <hr>
-        <form method="POST" action="" class="register"> {% csrf_token %}
+        <form method="POST" action="" class="register"> 
+          {% csrf_token %}
+          {{form|as_crispy_errors}}
           <div class="form-row">
             <div class="form-group col-md-6 mb-0">
                     {{form.first_name|as_crispy_field}}
