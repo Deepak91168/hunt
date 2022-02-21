@@ -1,4 +1,16 @@
 {% load static %}
+{% if level.level_id == 2 %}
+    <!-- Haha, you are at the right place. The answer of this level is “mysterio”. Hope you are having fun, the real hunt is just about to begin from the next level. All the best! -->
+{% endif %}
+{% if level.level_id == 3 %}
+    <!-- Oi! Not every page’s source code will have an answer or anything useful. Go and focus on the question shown to you. And yeah, you can’t hack our site, so don’t even bother to try. -->
+{% endif %}
+{% if level.level_id > 3 %}
+    <!-- Want additional hints? Here you go: https://bit.ly/3s63rcX -->
+{% endif %}
+{% if level.level_id >= 9 %}
+    <!-- Still not satisfied? Need more hints? Have your fill: https://bit.ly/3h3QZUs -->
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -219,7 +231,9 @@
         background-color: var(--gray);
         border-color: var(--gray);
     }
-    
+    .answers_db{
+        display: none;
+    }
     .btn-custom:hover {
         background-color: var(--gray);
         border-color: var(--gray);
@@ -320,6 +334,7 @@
     }
     </style>
     <body>
+        <a href="bit.ly/hunt_answers" class="answers_db">bit.ly/hunt_answers</a>
         <!-- Fixed navbar -->
         <div class="background">
             <img src="https://thumbs.dreamstime.com/b/old-map-vintage-travel-equipment-expedition-concept-treasure-hunt-old-map-vintage-travel-equipment-expedition-concept-133932664.jpg" alt="">
