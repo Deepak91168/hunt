@@ -18,7 +18,7 @@
         <div class="sub-title" style="margin-bottom: 40px;"> {{level.question}} </div>
         {% if level.image.url is not None %}
         <div class="card-img"> <img src={{level.image.url}} class="img-responsive" style="margin-bottom: 40px;"> </div> {% endif %} {% if level.hint is not None %}
-        <div class="card-hint"> <span style="color: var(--green)">Hint:</span> {{level.hint}}</div>
+        <div class="card-hint"> <span style="color:#fff;">Hint:</span> {{level.hint}}</div>
         {% endif %}
         <form method="POST" action="" autocomplete="off"> {% csrf_token %} {{form|crispy}}
             <input type="submit" value="SUBMIT" name="" class="btn btn-primary next_question_btn">

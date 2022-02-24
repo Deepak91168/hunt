@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %} Abhedya - login {% endblock %} {% block content %} 
+<style>
+    .background-blur{
+            padding: 2%;
+            backdrop-filter: blur(8px);
+            border-radius: 5%;
+    }
+</style>
+<div class="background-blur">
+<div class="alert alert-success " role="alert">
+<h4>Well done!</h4>
+<h5><p>A verification link has been sent to your email. <b>Kindly click on it to activate your account.</b></p></h5>
+</div>
+{%endblock%}
